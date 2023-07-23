@@ -37,6 +37,7 @@
         </Style>
     </Window.Styles>
     <StackPanel>
+        <DataGrid Items="{Binding vm.Test}" AutoGenerateColumns="True" Background="Red" Height="100"/>
         <StackPanel Orientation="Horizontal">
             <Label DockPanel.Dock="Left" Content="Device Type" Width="100" />
             <ComboBox DockPanel.Dock="Left" x:Name="deviceTypeComboBox" Width="260">
