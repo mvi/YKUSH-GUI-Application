@@ -1,0 +1,71 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:YKUSHGUIApplication.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="YKUSHGUIApplication.MainWindow"
+        Width="370" Height="280"
+        CanResize="False"
+        Padding="5"
+        Title="YKUSH GUI Application">
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    <Window.Styles>
+        <Style Selector="Button">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Height" Value="55" />
+        </Style>
+        <Style Selector="StackPanel">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+        <Style Selector="TextBlock.Indicator">
+            <Setter Property="Background" Value="Gray" />
+            <Setter Property="Margin" Value="50 10 " />
+            <Setter Property="Height" Value="14" />
+        </Style>
+        <Style Selector="TextBlock.On">
+            <Setter Property="Background" Value="LimeGreen" />
+        </Style>
+        <Style Selector="TextBlock.Off">
+            <Setter Property="Background" Value="Red" />
+        </Style>
+    </Window.Styles>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label DockPanel.Dock="Left" Content="Device Type" Width="100" />
+            <ComboBox DockPanel.Dock="Left" x:Name="deviceTypeComboBox" Width="260">
+                <ComboBoxItem>ykushxs - 1 port</ComboBoxItem>
+                <ComboBoxItem>ykush - 3 port</ComboBoxItem>
+                <ComboBoxItem>ykush3 - 3 port</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <Label x:Name="statusLabel" Content="Label" Margin="0 20 0 0" />
+
+        <StackPanel Name="panelInteractive" Margin="0 20 0 0">
+            <Grid ColumnDefinitions="*,*">
+                <Button Grid.Column="0" Content="Turn All Ports On" Click="TurnOnButton_Click" />
+                <Button Grid.Column="1" Content="Turn All Ports Off" Click="TurnOffButton_Click" />
+            </Grid>
+
+            <StackPanel Margin="0 20 0 0">
+                <Grid ColumnDefinitions="*,*,*">
+                    <TextBlock x:Name="indicator1" Grid.Column="0" Classes="Indicator" />
+                    <TextBlock x:Name="indicator2" Grid.Column="1" Classes="Indicator" />
+                    <TextBlock x:Name="indicator3" Grid.Column="2" Classes="Indicator" />
+                </Grid>
+                <Grid ColumnDefinitions="*,*,*">
+                    <Button x:Name="togglePort1Button" Grid.Column="0" Content="Toggle Port 1" Click="TogglePort1Button_Click" />
+                    <Button x:Name="togglePort2Button" Grid.Column="1" Content="Toggle Port 2" Click="TogglePort2Button_Click" />
+                    <Button x:Name="togglePort3Button" Grid.Column="2" Content="Toggle Port 3" Click="TogglePort3Button_Click" />
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>
