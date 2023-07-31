@@ -1,4 +1,4 @@
-﻿namespace YKUSHGUIApplication.Models;
+﻿namespace YKUSHGUI.Models;
 
 public class BoardInfo
 {

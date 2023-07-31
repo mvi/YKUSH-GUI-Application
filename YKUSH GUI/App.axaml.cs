@@ -1,10 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using YKUSHGUIApplication.Services;
-using YKUSHGUIApplication.ViewModels;
+using YKUSHGUI.Services;
+using YKUSHGUI.ViewModels;
 
-namespace YKUSHGUIApplication;
+namespace YKUSHGUI;
 
 public partial class App : Application
 {

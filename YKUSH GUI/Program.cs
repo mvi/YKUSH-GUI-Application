@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace YKUSHGUIApplication;
+namespace YKUSHGUI;
 
 internal class Program
 {

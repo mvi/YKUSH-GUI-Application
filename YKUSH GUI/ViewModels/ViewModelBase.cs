@@ -1,6 +1,6 @@
 ﻿using ReactiveUI;
 
-namespace YKUSHGUIApplication.ViewModels;
+namespace YKUSHGUI.ViewModels;
 
 public class ViewModelBase : ReactiveObject
 {

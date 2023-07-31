@@ -1,9 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using YKUSHGUIApplication.ViewModels;
+using YKUSHGUI.ViewModels;
 
-namespace YKUSHGUIApplication;
+namespace YKUSHGUI;
 
 public class ViewLocator : IDataTemplate
 {

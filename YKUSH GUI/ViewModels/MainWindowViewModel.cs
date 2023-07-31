@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using YKUSHGUIApplication.Models;
-using YKUSHGUIApplication.Services;
+using YKUSHGUI.Models;
+using YKUSHGUI.Services;
 
-namespace YKUSHGUIApplication.ViewModels;
+namespace YKUSHGUI.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {

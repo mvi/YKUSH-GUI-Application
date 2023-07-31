@@ -4,9 +4,9 @@ using System.Diagnostics;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
-using static YKUSHGUIApplication.CommandWrapper;
+using static YKUSHGUI.CommandWrapper;
 
-namespace YKUSHGUIApplication;
+namespace YKUSHGUI;
 
 public partial class MainWindow : Window
 {
