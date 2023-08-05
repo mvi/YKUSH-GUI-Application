@@ -18,6 +18,13 @@ public static class YKUSHCommand
     {
         List<string> boardSerials = new List<string>();
 
+#if MAC
+        // Work around an issue with PATH not being correctly populated on MacOS
+        string pathVariable = Environment.GetEnvironmentVariable("PATH");
+        pathVariable += ":/opt/homebrew/bin:/usr/local/bin";
+        Environment.SetEnvironmentVariable("PATH", pathVariable);
+#endif
+        
         ProcessStartInfo processStartInfo = new ProcessStartInfo("ykushcmd")
         {
             Arguments = $"{boardType} -l",
