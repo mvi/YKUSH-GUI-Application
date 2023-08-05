@@ -1,6 +1,12 @@
-﻿namespace YKUSHGUI.Services;
+﻿using System.Collections.ObjectModel;
+using YKUSHGUI.Models;
 
-public class DummyService : ITestService
+namespace YKUSHGUI.Services;
+
+public class DummyService : IBoardStatusService
 {
-    
+    public void Start(ObservableCollection<BoardInfo> boards)
+    {
+        
+    }
 }

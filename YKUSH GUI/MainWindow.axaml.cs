@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
-using static YKUSHGUI.CommandWrapper;
+using YKUSHGUI.Models;
+using static YKUSHGUI.YKUSHCommand;
 
 namespace YKUSHGUI;
 
@@ -36,13 +38,13 @@ public partial class MainWindow : Window
 
     private void Timer_Tick(object sender, EventArgs e)
     {
-        List<string> boardSerials = CommandWrapper.ListAttachedBoards(SelectedBoardType);
+        List<string> boardSerials = YKUSHCommand.ListAttachedBoards(SelectedBoardType);
         bool anyAttached = boardSerials.Count != 0;
         panelInteractive.IsEnabled = anyAttached;
 
         if (anyAttached)
         {
-            if (SelectedBoardType != BoardType.ykush) // Has three ports
+            if (SelectedBoardType != BoardType.ykushxs) // Has three ports
             {
                 SetIndicator(indicator1, GetPortStatus(SelectedBoardType, 1));
                 SetIndicator(indicator2, GetPortStatus(SelectedBoardType, 2));
@@ -91,7 +93,7 @@ public partial class MainWindow : Window
 
     private void RefreshVisibility()
     {
-        if (SelectedBoardType != BoardType.ykush) // Has three ports
+        if (SelectedBoardType != BoardType.ykushxs) // Has three ports
         {
             togglePort2Button.IsEnabled = true;
             togglePort3Button.IsEnabled = true;

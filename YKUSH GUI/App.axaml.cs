@@ -16,7 +16,7 @@ public partial class App : Application
     public override void OnFrameworkInitializationCompleted()
     {
         // Initialize the dependencies
-        var test = new DummyService();
+        var test = new BoardStatusService();
         
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

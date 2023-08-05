@@ -12,7 +12,7 @@ public enum BoardType
     ykush3, // Has three ports
 }
 
-public static class CommandWrapper
+public static class YKUSHCommand
 {
     public static List<string> ListAttachedBoards(BoardType boardType)
     {

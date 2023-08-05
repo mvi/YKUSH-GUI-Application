@@ -8,7 +8,7 @@
         Width="370" Height="280"
         CanResize="False"
         Padding="5"
-        Title="YKUSH GUI Application">
+        Title="YKUSH GUI">
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
@@ -37,7 +37,7 @@
         </Style>
     </Window.Styles>
     <StackPanel>
-        <DataGrid Items="{Binding vm.Test}" AutoGenerateColumns="True" Background="Red" Height="100"/>
+        <DataGrid Items="{Binding Boards}" Height="100" AutoGenerateColumns="True" CanUserReorderColumns="False" CanUserSortColumns="False" SelectionMode="Single" IsReadOnly="True"/>
         <StackPanel Orientation="Horizontal">
             <Label DockPanel.Dock="Left" Content="Device Type" Width="100" />
             <ComboBox DockPanel.Dock="Left" x:Name="deviceTypeComboBox" Width="260">
